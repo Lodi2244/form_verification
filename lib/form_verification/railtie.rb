@@ -9,13 +9,13 @@ module FormVerification
 
     initializer 'add form helper' do
       ActiveSupport.on_load(:action_view) do
-        ActionView::Helpers::FormBuilder.include(FormVerification::FormBuilder)
+        ActionView::Helpers::FormBuilder.send(:include, FormVerification::FormBuilder)
       end
     end
 
     initializer 'add controller helper' do
       ActiveSupport.on_load(:action_controller) do
-        ActionController::Base.include(FormVerification::Controller)
+        ActionController::Base.send(:include, FormVerification::Controller)
       end
     end
   end
