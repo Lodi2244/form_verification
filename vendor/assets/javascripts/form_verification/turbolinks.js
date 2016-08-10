@@ -3,7 +3,7 @@
 (function() {
   // Add Handler on document page:change, and ensure it is reattached
   //
-  $(document).on('page:change', function() {
+  $(document).on('page:change turbolinks:load', function() {
     $.formVerification().addHandler();
   });
 })();
